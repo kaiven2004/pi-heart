@@ -1,0 +1,29 @@
+{
+  "name": "pi-mental-health-agent",
+  "version": "0.1.0",
+  "description": "心理健康对话 Agent，基于 pi-agent-core 框架构建",
+  "type": "module",
+  "main": "./dist/index.js",
+  "bin": {
+    "pi-心理": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/index.ts",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@earendil-works/pi-agent-core": "^0.85.1",
+    "@earendil-works/pi-ai": "^0.85.1",
+    "chalk": "^5.6.2",
+    "openai": "^7.10.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.19",
+    "tsx": "^4.22.1",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=22.19.0"
+  }
+}

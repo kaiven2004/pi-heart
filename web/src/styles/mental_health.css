@@ -1,0 +1,554 @@
+
+/* 心理健康自测模块 */
+.mh-assessment {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  flex: 1;
+  min-height: 0;
+}
+
+/* 可滚动容器 */
+.mh-scrollable {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 固定在顶部的 header */
+.mh-header-sticky {
+  position: sticky;
+  top: 0;
+  background: var(--color-bg-main);
+  z-index: 10;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 16px;
+}
+
+/* 可滚动的内容区域 */
+.mh-questions-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 8px;
+}
+
+/* 固定在底部的 footer */
+.mh-footer {
+  flex-shrink: 0;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-border);
+}
+
+.mh-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.mh-icon {
+  font-size: 40px;
+  flex-shrink: 0;
+}
+
+.mh-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0 0 4px 0;
+}
+
+.mh-desc {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.mh-start-btn {
+  width: 100%;
+  padding: 14px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+  margin-bottom: 12px;
+}
+
+.mh-start-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.4);
+}
+
+.mh-start-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.mh-disclaimer {
+  text-align: center;
+  font-size: 11px;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* 进度条 */
+.mh-progress {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.mh-progress span {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+.mh-progress-bar {
+  flex: 1;
+  height: 6px;
+  background: var(--color-border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.mh-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.mh-back-btn {
+  background: none;
+  border: none;
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: color 0.15s;
+}
+
+.mh-back-btn:hover {
+  color: var(--color-primary);
+}
+
+/* 题目卡片 */
+.mh-questions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.mh-question-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.mh-question-num {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+
+.mh-question-cat {
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.mh-question-text {
+  font-size: 14px;
+  color: var(--color-text-primary);
+  line-height: 1.5;
+  margin: 0 0 12px 0;
+}
+
+.mh-options {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mh-option {
+  padding: 10px 14px;
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s;
+}
+
+.mh-option:hover {
+  border-color: var(--color-primary);
+  color: var(--color-text-primary);
+}
+
+.mh-option.selected {
+  border-color: #667eea;
+  background: rgba(102, 126, 234, 0.1);
+  color: #667eea;
+  font-weight: 500;
+}
+
+.mh-submit-btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.15s;
+  margin-bottom: 8px;
+}
+
+.mh-submit-btn.enabled {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.mh-submit-btn.enabled:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.4);
+}
+
+.mh-submit-btn.disabled {
+  background: var(--color-border);
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+}
+
+.mh-hint {
+  text-align: center;
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* 结果页 */
+.mh-score-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.mh-score-circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 4px solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: var(--color-surface);
+}
+
+.mh-score-num {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1;
+}
+
+.mh-score-max {
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+
+.mh-score-info {
+  flex: 1;
+}
+
+.mh-score-label {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 4px;
+}
+
+.mh-score-date {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.mh-section-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  margin: 0 0 12px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mh-today-badge {
+  font-size: 11px;
+  font-weight: 500;
+  background: rgba(102, 126, 234, 0.15);
+  color: #667eea;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+/* 维度分析 */
+.mh-dimensions {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.mh-dimension-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.mh-dimension-row:last-child {
+  margin-bottom: 0;
+}
+
+.mh-dimension-name {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  width: 70px;
+  flex-shrink: 0;
+}
+
+.mh-dimension-bar {
+  flex: 1;
+  height: 6px;
+  background: var(--color-bg);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.mh-dimension-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+.mh-dimension-score {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  width: 36px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* 任务卡片 */
+.mh-tasks {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.mh-task-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  background: var(--color-bg);
+  border: 1px solid transparent;
+  transition: all 0.15s;
+}
+
+.mh-task-card:last-child {
+  margin-bottom: 0;
+}
+
+.mh-task-card.done {
+  opacity: 0.5;
+  border-color: var(--color-border);
+}
+
+.mh-task-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.mh-task-check {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: white;
+  background: #667eea;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.mh-task-card.done .mh-task-check {
+  cursor: default;
+}
+
+.mh-task-check:hover:not(.done) {
+  border-color: #667eea;
+  transform: scale(1.1);
+}
+
+.mh-task-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.mh-task-desc {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+.mh-task-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.mh-difficulty-badge {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.mh-task-points {
+  font-size: 11px;
+  font-weight: 600;
+  color: #667eea;
+}
+
+.mh-retake-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.mh-retake-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+/* 历史记录列表 */
+.mh-history-btn {
+  width: 100%;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.15s;
+  margin-bottom: 12px;
+}
+.mh-history-btn:hover:not(:disabled) {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+.mh-history-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.mh-history-list-btn {
+  width: 100%;
+  padding: 10px;
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 8px;
+  transition: all 0.15s;
+}
+.mh-history-list-btn:hover { border-color: var(--color-primary); color: var(--color-primary); }
+
+.mh-history-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.mh-history-item:hover { border-color: var(--color-primary-200); background: var(--color-primary-50); }
+
+.mh-history-date {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  width: 90px;
+  flex-shrink: 0;
+}
+.mh-history-score {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  flex: 1;
+}
+.mh-history-level {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: rgba(102,126,234,0.1);
+  color: #667eea;
+}
+
+.mh-empty {
+  text-align: center;
+  font-size: 13px;
+  color: var(--color-text-muted);
+  padding: 40px 0;
+}
+.mh-loading {
+  text-align: center;
+  font-size: 13px;
+  color: var(--color-text-muted);
+  padding: 40px 0;
+}
