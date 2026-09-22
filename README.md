@@ -16,6 +16,7 @@
 <!-- TODO: 添加实际截图，放入 screenshots/ 目录 -->
 <img width="1703" height="901" alt="Image" src="https://github.com/user-attachments/assets/e4a377c0-65d4-4c6c-bdd0-e1d02006d841" />
 <img width="1269" height="492" alt="Image" src="https://github.com/user-attachments/assets/64a1f61b-f215-45e8-8eaa-6544af8ab3c6" />
+<img width="511" height="1213" alt="Image" src="https://github.com/user-attachments/assets/9f87ebdf-a147-4834-861b-c3b3a9394ffe" />
 -->
 
 ## 技术栈
