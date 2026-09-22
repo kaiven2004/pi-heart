@@ -14,10 +14,8 @@
 ## 截图
 
 <!-- TODO: 添加实际截图，放入 screenshots/ 目录 -->
-<!-- 截图示例：
-![欢迎页面](screenshots/welcome.png)
-![对话界面](screenshots/chat.png)
-![心理健康自测](screenshots/assessment.png)
+<img width="1703" height="901" alt="Image" src="https://github.com/user-attachments/assets/e4a377c0-65d4-4c6c-bdd0-e1d02006d841" />
+<img width="1269" height="492" alt="Image" src="https://github.com/user-attachments/assets/64a1f61b-f215-45e8-8eaa-6544af8ab3c6" />
 -->
 
 ## 技术栈
